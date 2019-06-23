@@ -14,7 +14,7 @@
     <a title="CoordinatePath Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">AviationKit Docs</a> (33% documented)</p>
+        <p><a href="../index.html">AviationKit Docs</a> (62% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -42,25 +42,10 @@
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Enums/AirSigmetError.html">AirSigmetError</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/AircraftError.html">AircraftError</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Enums/GeneralError.html">GeneralError</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Enums/MetarError.html">MetarError</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Enums/MostRecentForEachStationConstraints.html">MostRecentForEachStationConstraints</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/StationError.html">StationError</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/TafError.html">TafError</a>
               </li>
             </ul>
           </li>
@@ -155,7 +140,16 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>Represents one leg of a flight path.</p>
+
+<p>Representing one leg of a flight path using either:</p>
+
+<ul>
+<li>A station String</li>
+<li>The starting point and the ending point</li>
+</ul>
+
+<p>When using the station string, the four digit airport is the starting point.  The ending point is the is the next leg station string.</p>
 
           </section>
           <section class="section task-group-section">
@@ -174,7 +168,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The leg of the journey.  Organized ascending and this number should be a positive interger.</p>
 
                       </div>
                       <div class="declaration">
@@ -201,7 +195,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The starting coordinate for the leg</p>
 
                       </div>
                       <div class="declaration">
@@ -228,7 +222,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The ending coordinate for the leg</p>
 
                       </div>
                       <div class="declaration">
@@ -255,7 +249,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The station string for the airport</p>
 
                       </div>
                       <div class="declaration">
@@ -269,6 +263,17 @@
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initializers"></a>
+                <a name="//apple_ref/swift/Section/Initializers" class="dashAnchor"></a>
+                <a href="#/Initializers">
+                  <h3 class="section-name">Initializers</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -282,7 +287,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The default initilaizer.</p>
 
                       </div>
                       <div class="declaration">
@@ -292,6 +297,10 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An initialized <code>CoordinatePath</code> object.</p>
                       </div>
                     </section>
                   </div>
@@ -309,7 +318,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Initializer with all variables.</p>
 
                       </div>
                       <div class="declaration">
@@ -320,6 +329,65 @@
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>leg</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Int representing the leg of the journey</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>startPoint</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code><a href="../Structs/Coordinates.html">Coordinates</a></code> object representing the latitude and longitude of the starting point.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>endPoint</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code><a href="../Structs/Coordinates.html">Coordinates</a></code> object representing the latitude and longitude of the ending point.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>stationString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The four character station string for the airport.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An initialized <code>CoordinatePath</code> object.</p>
+                      </div>
                     </section>
                   </div>
                 </li>
@@ -328,7 +396,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://github.com/mikesilvers/AviationKit" target="_blank" rel="external">Mike Silvers</a>. All rights reserved. (Last updated: 2019-06-10)</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/mikesilvers/AviationKit" target="_blank" rel="external">Mike Silvers</a>. All rights reserved. (Last updated: 2019-06-23)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
